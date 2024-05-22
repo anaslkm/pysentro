@@ -1,0 +1,191 @@
+{
+  "name": "sentro_client_config",
+  "version": "1.0.0",
+  "date": "15/09/2021",
+  "author": "Anas Husain",
+  "email": "anasusain@outlook.com",
+  "program_name": "SentroCommand",
+  "program_description": "Program for controlling Sentro NIR through SDK",
+  "description": "file contains all the parameters needed for the Sentronic TCP/IP Client",
+  "Sentronic_Port": 60000,
+  "header_size": 5,
+  "header_format": "<ib",
+  "client_name": "SentroTestClientPy",
+  "msg_types": {
+    "-1": "System",
+    "0": "String",
+    "1": "Unsigned short integer (16 bit) array",
+    "2": "Signed short integer (16 bit) array",
+    "3": "Unsigned integer (32 bit) array",
+    "4": "Signed integer (32 bit) array",
+    "5": "Unsigned long integer (64 bit) array",
+    "6": "Signed long integer (64 bit) array",
+    "7": "Single precision floating point number (32 bit) array",
+    "8": "Double precision floating point number (64 bit) array",
+    "9": "Character (16 bit, Unicode) array",
+    "10": "Byte (unsigned 8 bit integer) array",
+    "11": "Telegram"
+  },
+  "cmds": {
+    "Init": {
+      "type": 11,
+      "recipient": "SentroSystemManager",
+      "contained_type": "Sentronic.SentroCommunication.Command",
+      "identifier": "Init",
+      "number_of_param": 0,
+      "parameter_value": "",
+      "requires_receipt": false,
+      "executed": false,
+      "encoding": 65001
+    },
+    "StartMeasurement": {
+      "type": 11,
+      "recipient": "SentroDriver",
+      "contained_type": "Sentronic.SentroCommunication.Command",
+      "identifier": "StartMeasurement",
+      "number_of_param": 1,
+      "parameter_value": ["true"],
+      "requires_receipt": true,
+      "executed": true,
+      "encoding": 20127
+    },
+    "StopMeasurement": {
+      "type": 11,
+      "recipient": "SentroDriver",
+      "contained_type": "Sentronic.SentroCommunication.Command",
+      "identifier": "StopMeasurement",
+      "number_of_param": 1,
+      "parameter_value": ["true"],
+      "requires_receipt": true,
+      "executed": true,
+      "encoding": 20127
+    },
+    "SingleMeasSample": {
+      "type": 11,
+      "recipient": "SentroDriver",
+      "contained_type": "Sentronic.SentroCommunication.Command",
+      "identifier": "SingleMeasurement",
+      "number_of_param": 1,
+      "parameter_value": ["Sample"],
+      "requires_receipt": true,
+      "executed": true,
+      "encoding": 20127
+    },
+    "ContSingleMeasSample": {
+      "type": 11,
+      "recipient": "SentroDriver",
+      "contained_type": "Sentronic.SentroCommunication.Command",
+      "identifier": "SingleMeasurement",
+      "number_of_param": 1,
+      "parameter_value": ["Sample"],
+      "requires_receipt": true,
+      "executed": true,
+      "encoding": 20127
+    },
+    "SingleMeasSampleB": {
+      "type": 11,
+      "recipient": "SentroDriver",
+      "contained_type": "Sentronic.SentroCommunication.Command",
+      "identifier": "SingleMeasurement",
+      "number_of_param": 2,
+      "parameter_value": ["true", "Sample"],
+      "requires_receipt": true,
+      "executed": true,
+      "encoding": 20127
+    },
+    "SingleMeasDark": {
+      "type": 11,
+      "recipient": "SentroDriver",
+      "contained_type": "Sentronic.SentroCommunication.Command",
+      "identifier": "SingleMeasurement",
+      "number_of_param": 1,
+      "parameter_value": ["Dark"],
+      "requires_receipt": true,
+      "executed": true,
+      "encoding": 20127
+    },
+    "SingleMeasReference": {
+      "type": 11,
+      "recipient": "SentroDriver",
+      "contained_type": "Sentronic.SentroCommunication.Command",
+      "identifier": "SingleMeasurement",
+      "number_of_param": 1,
+      "parameter_value": ["Reference"],
+      "requires_receipt": true,
+      "executed": true,
+      "encoding": 20127
+    },
+    "SingleMeasCorrection": {
+      "type": 11,
+      "recipient": "SentroDriver",
+      "contained_type": "Sentronic.SentroCommunication.Command",
+      "identifier": "SingleMeasurement",
+      "number_of_param": 1,
+      "parameter_value": ["Correction"],
+      "requires_receipt": true,
+      "executed": true,
+      "encoding": 20127
+    },
+    "SingleMeasFPF": {
+      "type": 11,
+      "recipient": "SentroDriver",
+      "contained_type": "Sentronic.SentroCommunication.Command",
+      "identifier": "SingleMeasurement",
+      "number_of_param": 1,
+      "parameter_value": ["FabryPerotFilter"],
+      "requires_receipt": true,
+      "executed": true,
+      "encoding": 20127
+    },
+    "SingleMeasCorrDark": {
+      "type": 11,
+      "recipient": "SentroDriver",
+      "contained_type": "Sentronic.SentroCommunication.Command",
+      "identifier": "SingleMeasurement",
+      "number_of_param": 1,
+      "parameter_value": ["CorrectionDark"],
+      "requires_receipt": true,
+      "executed": true,
+      "encoding": 20127
+    },
+    "SingleMeasBackground": {
+      "type": 11,
+      "recipient": "SentroDriver",
+      "contained_type": "Sentronic.SentroCommunication.Command",
+      "identifier": "SingleMeasurement",
+      "number_of_param": 1,
+      "parameter_value": ["Background"],
+      "requires_receipt": true,
+      "executed": true,
+      "encoding": 20127
+    },
+    "ChannelSuccessfullyInitialized": {
+      "type": 11,
+      "recipient": "SentroSystemManager",
+      "contained_type": "Sentronic.SentroCommunication.Command",
+      "identifier": "Init",
+      "number_of_param": 0,
+      "requires_receipt": true,
+      "executed": true,
+      "encoding": 20127
+    },
+    "ChannelIDList": {
+      "type": 11,
+      "recipient": "SentroSystemManager",
+      "contained_type": "Sentronic.SentroCommunication.Command",
+      "identifier": "Init",
+      "number_of_param": 0,
+      "requires_receipt": true,
+      "executed": true,
+      "encoding": 20127
+    }
+  },
+  "spectrum_type": {
+        "0": "pixel data over pixel numbers",
+        "1": "interpolated raw pixel data over wavelengths",
+        "2": "transmittance over wl",
+        "3": "absorbance over wl",
+        "4": "sample corrected data over wl, calculated values based on sample - sample dark",
+        "5": "conformity data over wl"
+  }
+}
