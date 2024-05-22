@@ -2,6 +2,8 @@ from struct import calcsize, pack
 from pathlib import Path
 import os
 import json
+from pprint import pprint
+
 
 fpath = Path(os.path.dirname(__file__))
 conf_path = Path("conf/config.json")
@@ -18,17 +20,22 @@ class SentroCommand:
         self.pointer_cmd: int = 0
         self.cmd_format: str = ""
 
-    def cmd_param_constructor(self, telegram_tmp, config: dict):
-        if config["number_of_param"] == 0:
+    def print_params_options(self):
+        print("\nParameter options list:")
+        pprint(self.conf["params"])
+        print()
+
+    def cmd_param_constructor(self, telegram_tmp: bytearray, params: list = []):
+        if len(params) == 0:
             telegram_tmp.append(0)
             self.cmd_format += "i"
         else:
-            for i in range(config["number_of_param"]):
-                telegram_tmp.append(config["parameter_value"][i].encode("utf-8"))
-                telegram_tmp.append(len(config["parameter_value"][i]))
-                self.cmd_format += "s" + str(len(config["parameter_value"][i]))[::-1]
+            for param in params:
+                telegram_tmp.append(param.encode("utf-8"))
+                telegram_tmp.append(len(param))
+                self.cmd_format += "s" + str(len(param))[::-1]
                 self.cmd_format += "i"
-        telegram_tmp.append(config["number_of_param"])
+        telegram_tmp.append(len(params))
         self.cmd_format += "b"
         return telegram_tmp
 
@@ -37,7 +44,7 @@ class SentroCommand:
         self.pointer_cmd = 0
         self.telegram_cmd = None
 
-    def cmd_constructor(self, cmd, channel=None):
+    def cmd_constructor(self, cmd: str, channel: str = None, params: list = []):
         self.reset_command()
         telegram_send = [self.conf["cmds"][cmd]["encoding"]]
         self.cmd_format += "i"
@@ -52,8 +59,8 @@ class SentroCommand:
         self.cmd_format += "b"
         telegram_send.append(int(self.conf["cmds"][cmd]["requires_receipt"]))
         self.cmd_format += "b"
-        telegram_send = self.cmd_param_constructor(telegram_send,
-                                                   self.conf["cmds"][cmd])
+        telegram_send = self.cmd_param_constructor(telegram_send, params)
+        
         telegram_send.append(self.conf["cmds"][cmd]["identifier"].encode("utf-8"))
         self.cmd_format += "s" + str(len(self.conf["cmds"][cmd]["identifier"]))[::-1]
         telegram_send.append(len(self.conf["cmds"][cmd]["identifier"]))

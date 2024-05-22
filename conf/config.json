@@ -26,6 +26,7 @@
     "10": "Byte (unsigned 8 bit integer) array",
     "11": "Telegram"
   },
+  "params": ["true", "Sample", "Dark", "Reference", "Correction", "FabryPerotFilter", "CorrectionDark", "Background"],
   "cmds": {
     "Init": {
       "type": 11,
@@ -44,7 +45,7 @@
       "contained_type": "Sentronic.SentroCommunication.Command",
       "identifier": "StartMeasurement",
       "number_of_param": 1,
-      "parameter_value": ["true"],
+      "parameter_value": "",
       "requires_receipt": true,
       "executed": true,
       "encoding": 20127
@@ -55,7 +56,7 @@
       "contained_type": "Sentronic.SentroCommunication.Command",
       "identifier": "StopMeasurement",
       "number_of_param": 1,
-      "parameter_value": ["true"],
+      "parameter_value": "",
       "requires_receipt": true,
       "executed": true,
       "encoding": 20127
@@ -66,115 +67,7 @@
       "contained_type": "Sentronic.SentroCommunication.Command",
       "identifier": "SingleMeasurement",
       "number_of_param": 1,
-      "parameter_value": ["Sample"],
-      "requires_receipt": true,
-      "executed": true,
-      "encoding": 20127
-    },
-    "ContSingleMeasSample": {
-      "type": 11,
-      "recipient": "SentroDriver",
-      "contained_type": "Sentronic.SentroCommunication.Command",
-      "identifier": "SingleMeasurement",
-      "number_of_param": 1,
-      "parameter_value": ["Sample"],
-      "requires_receipt": true,
-      "executed": true,
-      "encoding": 20127
-    },
-    "SingleMeasSampleB": {
-      "type": 11,
-      "recipient": "SentroDriver",
-      "contained_type": "Sentronic.SentroCommunication.Command",
-      "identifier": "SingleMeasurement",
-      "number_of_param": 2,
-      "parameter_value": ["true", "Sample"],
-      "requires_receipt": true,
-      "executed": true,
-      "encoding": 20127
-    },
-    "SingleMeasDark": {
-      "type": 11,
-      "recipient": "SentroDriver",
-      "contained_type": "Sentronic.SentroCommunication.Command",
-      "identifier": "SingleMeasurement",
-      "number_of_param": 1,
-      "parameter_value": ["Dark"],
-      "requires_receipt": true,
-      "executed": true,
-      "encoding": 20127
-    },
-    "SingleMeasReference": {
-      "type": 11,
-      "recipient": "SentroDriver",
-      "contained_type": "Sentronic.SentroCommunication.Command",
-      "identifier": "SingleMeasurement",
-      "number_of_param": 1,
-      "parameter_value": ["Reference"],
-      "requires_receipt": true,
-      "executed": true,
-      "encoding": 20127
-    },
-    "SingleMeasCorrection": {
-      "type": 11,
-      "recipient": "SentroDriver",
-      "contained_type": "Sentronic.SentroCommunication.Command",
-      "identifier": "SingleMeasurement",
-      "number_of_param": 1,
-      "parameter_value": ["Correction"],
-      "requires_receipt": true,
-      "executed": true,
-      "encoding": 20127
-    },
-    "SingleMeasFPF": {
-      "type": 11,
-      "recipient": "SentroDriver",
-      "contained_type": "Sentronic.SentroCommunication.Command",
-      "identifier": "SingleMeasurement",
-      "number_of_param": 1,
-      "parameter_value": ["FabryPerotFilter"],
-      "requires_receipt": true,
-      "executed": true,
-      "encoding": 20127
-    },
-    "SingleMeasCorrDark": {
-      "type": 11,
-      "recipient": "SentroDriver",
-      "contained_type": "Sentronic.SentroCommunication.Command",
-      "identifier": "SingleMeasurement",
-      "number_of_param": 1,
-      "parameter_value": ["CorrectionDark"],
-      "requires_receipt": true,
-      "executed": true,
-      "encoding": 20127
-    },
-    "SingleMeasBackground": {
-      "type": 11,
-      "recipient": "SentroDriver",
-      "contained_type": "Sentronic.SentroCommunication.Command",
-      "identifier": "SingleMeasurement",
-      "number_of_param": 1,
-      "parameter_value": ["Background"],
-      "requires_receipt": true,
-      "executed": true,
-      "encoding": 20127
-    },
-    "ChannelSuccessfullyInitialized": {
-      "type": 11,
-      "recipient": "SentroSystemManager",
-      "contained_type": "Sentronic.SentroCommunication.Command",
-      "identifier": "Init",
-      "number_of_param": 0,
-      "requires_receipt": true,
-      "executed": true,
-      "encoding": 20127
-    },
-    "ChannelIDList": {
-      "type": 11,
-      "recipient": "SentroSystemManager",
-      "contained_type": "Sentronic.SentroCommunication.Command",
-      "identifier": "Init",
-      "number_of_param": 0,
+      "parameter_value": "",
       "requires_receipt": true,
       "executed": true,
       "encoding": 20127
