@@ -8,7 +8,6 @@ repo contains 2 main functions in sdk:
 Some use case examples are contained in tests dir
 
 possible type of commands:
-StartMeasurement
-StopMeasurement
-SingleMeasSample
-SingleMeasDark
+- StartMeasurement
+- StopMeasurement
+- SingleMeasSample
